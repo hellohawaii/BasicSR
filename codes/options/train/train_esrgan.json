@@ -1,7 +1,7 @@
 {
-  "name": "debug_002_RRDB_ESRGAN_x4_DIV2K" //  please remove "debug_" during training
+  "name": "first_train" //  please remove "debug_" during training
   , "use_tb_logger": true
-  , "model":"srragan"
+  , "model":"srgan"
   , "scale": 4
   , "gpu_ids": [0]
 
@@ -9,8 +9,8 @@
     "train": {
       "name": "DIV2K"
       , "mode": "LRHR"
-      , "dataroot_HR": "/mnt/SSD/xtwang/BasicSR_datasets/DIV2K800/DIV2K800_sub.lmdb"
-      , "dataroot_LR": "/mnt/SSD/xtwang/BasicSR_datasets/DIV2K800/DIV2K800_sub_bicLRx4.lmdb"
+      , "dataroot_HR": "/home/liushuzhi/Desktop/kechuang/superresolution_dataset/DIV2K/DIV2K_train_HR_sub_image"
+      , "dataroot_LR": "/home/liushuzhi/Desktop/kechuang/superresolution_dataset/DIV2K/DIV2K_train_LR_sub_image"
       , "subset_file": null
       , "use_shuffle": true
       , "n_workers": 8
@@ -22,13 +22,13 @@
     , "val": {
       "name": "val_set14_part"
       , "mode": "LRHR"
-      , "dataroot_HR": "/mnt/SSD/xtwang/BasicSR_datasets/val_set14_part/Set14"
-      , "dataroot_LR": "/mnt/SSD/xtwang/BasicSR_datasets/val_set14_part/Set14_bicLRx4"
+      , "dataroot_HR": "/home/liushuzhi/Desktop/kechuang/superresolution_dataset/Set14/Set14_raw_image"
+      , "dataroot_LR": "/home/liushuzhi/Desktop/kechuang/superresolution_dataset/Set14/Set14_LR_image"
     }
   }
 
   , "path": {
-    "root": "/home/xtwang/Projects/BasicSR"
+    "root": "/home/liushuzhi/Desktop/kechuang/BasicSR"
     , "pretrain_model_G": "../experiments/pretrained_models/RRDB_PSNR_x4.pth"
   }
 

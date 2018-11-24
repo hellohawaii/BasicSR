@@ -4,13 +4,13 @@ import glob
 import pickle
 import lmdb
 import cv2
-
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+print(sys.path)
+# sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.progress_bar import ProgressBar
 
 # configurations
-img_folder = '/mnt/SSD/xtwang/BasicSR_datasets/DIV2K800/DIV2K800/*'  # glob matching pattern
-lmdb_save_path = '/mnt/SSD/xtwang/BasicSR_datasets/DIV2K800/DIV2K800.lmdb'  # must end with .lmdb
+img_folder = 'D:\\superresolution_dataset\\DIV2K\\DIV2K_train_HR_sub_image\\*'  # glob matching pattern
+lmdb_save_path = 'D:\\superresolution_dataset\\DIV2K\\DIV2K_train_HR_sub_image.lmdb' # must end with .lmdb
 
 img_list = sorted(glob.glob(img_folder))
 dataset = []
@@ -23,6 +23,8 @@ for i, v in enumerate(img_list):
     img = cv2.imread(v, cv2.IMREAD_UNCHANGED)
     dataset.append(img)
     data_size += img.nbytes
+print(lmdb_save_path)
+print(data_size * 10)
 env = lmdb.open(lmdb_save_path, map_size=data_size * 10)
 print('Finish reading {} images.\nWrite lmdb...'.format(len(img_list)))
 

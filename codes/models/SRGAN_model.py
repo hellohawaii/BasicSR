@@ -220,7 +220,7 @@ class SRGANModel(BaseModel):
     def load(self):
         load_path_G = self.opt['path']['pretrain_model_G']
         if load_path_G is not None:
-            print('loading model for G [{:s}}] ...'.format(load_path_G))
+            print('loading model for G [{:s}] ...'.format(load_path_G))
             self.load_network(load_path_G, self.netG)
         load_path_D = self.opt['path']['pretrain_model_D']
         if self.opt['is_train'] and load_path_D is not None:

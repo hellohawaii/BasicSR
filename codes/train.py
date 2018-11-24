@@ -59,7 +59,7 @@ def main():
 
     # Create model
     model = create_model(opt)
-    # create logger
+    # create logger-
     logger = Logger(opt)
 
     current_step = 0
